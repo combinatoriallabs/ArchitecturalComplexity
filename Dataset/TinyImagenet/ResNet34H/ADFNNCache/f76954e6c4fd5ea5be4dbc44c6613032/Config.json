@@ -1,0 +1,144 @@
+{
+  "InputShape": [
+    64,
+    16,
+    16,
+    5,
+    5
+  ],
+  "OutputShapes": [
+    [
+      16,
+      16,
+      16,
+      64
+    ],
+    [
+      5,
+      16,
+      64
+    ],
+    [
+      16
+    ],
+    [
+      16,
+      16,
+      16
+    ],
+    [
+      16,
+      16
+    ]
+  ],
+  "TEMID": "299cff0fd95867111e3fa5349c7cc70d",
+  "TOMIDs": [
+    "e6d04f960f2d59a4a1229dcf0ac985a2",
+    "a0bf30f8697378a3853de63015384440",
+    "f4e8368d516ad76bbc3a393bc433a4fe",
+    "f903a94ac76c3a43ca3cc0e6b87b0e92",
+    "b2687f416f7e29beedfa0c917b7dcaf1"
+  ],
+  "TOMShapes": [
+    [
+      64,
+      16,
+      16,
+      16,
+      5,
+      5
+    ],
+    [
+      64,
+      16,
+      16,
+      5,
+      5,
+      5
+    ],
+    [
+      5,
+      16,
+      64
+    ],
+    [
+      5,
+      5,
+      16,
+      16,
+      16,
+      64
+    ],
+    [
+      16,
+      16,
+      16,
+      64
+    ]
+  ],
+  "TOMData": [
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "leaky_relu",
+          null
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "leaky_relu",
+          null
+        ],
+        [
+          "LayerNorm",
+          [
+            16
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "relu6",
+          null
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "Softmax",
+          -2
+        ],
+        [
+          "LayerNorm",
+          [
+            16,
+            16
+          ]
+        ]
+      ]
+    }
+  ],
+  "ADFNNInputModule": "None",
+  "ADFNNOutputModule": "None",
+  "PostConvChannels": [],
+  "ADFNNResiduals": false,
+  "ADFNNResidualFq": -1
+}

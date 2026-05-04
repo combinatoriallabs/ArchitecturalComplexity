@@ -1,0 +1,141 @@
+{
+  "InputShape": [
+    16,
+    192
+  ],
+  "OutputShapes": [
+    [
+      16,
+      16,
+      64,
+      192
+    ],
+    [
+      3,
+      16
+    ],
+    [
+      16,
+      64,
+      192
+    ],
+    [
+      16
+    ],
+    [
+      16,
+      64,
+      3
+    ]
+  ],
+  "TEMID": "d2f5443de93c212d913715d86a8a4b91",
+  "TOMIDs": [
+    "a96789902ab64d70fade1a9153d90ace",
+    "45ee36d3b9ee3b38fb946a1ea55d6d2a",
+    "78b48d912c6b5d364754365585085a64",
+    "9b86df784681cdf67614b7b773923275",
+    "ad41dff861c7671ad0450c828ab128dd"
+  ],
+  "TOMShapes": [
+    [
+      16,
+      64,
+      16,
+      192
+    ],
+    [
+      16,
+      3,
+      64,
+      16,
+      192
+    ],
+    [
+      3,
+      3,
+      64,
+      192,
+      16
+    ],
+    [
+      16,
+      3,
+      64,
+      16,
+      192
+    ],
+    [
+      16,
+      16,
+      64,
+      192,
+      3
+    ]
+  ],
+  "TOMData": [
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "leaky_relu",
+          null
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "leaky_relu",
+          null
+        ],
+        [
+          "LayerNorm",
+          [
+            16
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "LayerNorm",
+          [
+            16,
+            64,
+            192
+          ]
+        ],
+        [
+          "relu6",
+          null
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "relu6",
+          null
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    }
+  ],
+  "ADFNNInputModule": "None",
+  "ADFNNOutputModule": "None",
+  "PostConvChannels": [],
+  "ADFNNResiduals": false,
+  "ADFNNResidualFq": -1
+}

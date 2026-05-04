@@ -1,0 +1,145 @@
+{
+  "InputShape": [
+    64,
+    16,
+    16,
+    5,
+    5
+  ],
+  "OutputShapes": [
+    [
+      5,
+      16
+    ],
+    [
+      2,
+      2,
+      8,
+      32
+    ],
+    [
+      16
+    ],
+    [
+      16
+    ],
+    [
+      16,
+      16
+    ]
+  ],
+  "TEMID": "66fdfb59093f8d8bbf36aa437e395f16",
+  "TOMIDs": [
+    "0b5037d28f05edd5076919bf28bc061b",
+    "daa57cf1c2f2bbfccd3c757a3830b02c",
+    "07292820702c244fa9fdda3970401eee",
+    "d5eaefe967dc3eaa6d03d6451be0ed27",
+    "d5525e5d67d07ff5da8bfa8a5713e1cf"
+  ],
+  "TOMShapes": [
+    [
+      64,
+      16,
+      16,
+      5,
+      5
+    ],
+    [
+      32,
+      8,
+      64,
+      2,
+      2,
+      16,
+      16,
+      5,
+      5
+    ],
+    [
+      64,
+      16,
+      16,
+      5,
+      5
+    ],
+    [
+      2,
+      2,
+      8,
+      5,
+      16,
+      32
+    ],
+    [
+      16,
+      16
+    ]
+  ],
+  "TOMData": [
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "LayerNorm",
+          [
+            5,
+            16
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "relu6",
+          null
+        ],
+        [
+          "LayerNorm",
+          [
+            32
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "LayerNorm",
+          [
+            16
+          ]
+        ],
+        [
+          "relu6",
+          null
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "leaky_relu",
+          null
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    }
+  ],
+  "ADFNNInputModule": "None",
+  "ADFNNOutputModule": "None",
+  "PostConvChannels": [],
+  "ADFNNResiduals": false,
+  "ADFNNResidualFq": -1
+}

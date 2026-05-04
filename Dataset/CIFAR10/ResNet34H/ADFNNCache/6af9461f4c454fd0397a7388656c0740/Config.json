@@ -1,0 +1,145 @@
+{
+  "InputShape": [
+    64,
+    16,
+    16,
+    5,
+    5
+  ],
+  "OutputShapes": [
+    [
+      16,
+      16
+    ],
+    [
+      5,
+      5,
+      16,
+      64,
+      64
+    ],
+    [
+      16,
+      16,
+      16
+    ],
+    [
+      16,
+      16,
+      16
+    ],
+    [
+      16,
+      16
+    ]
+  ],
+  "TEMID": "50f305772a4f086b996ee5ff47f98ddd",
+  "TOMIDs": [
+    "62f0bb21ea3045d114f374ef4291a11c",
+    "a4caed01eb430eba6ae03eac8e6a40d5",
+    "0e9b25f93a753a03b76fe2639e4e39f0",
+    "fae9961bcd8d36d6b0d4e3904a5a074c",
+    "80eab46a33227a3f9912019902a91c7b"
+  ],
+  "TOMShapes": [
+    [
+      64,
+      16,
+      16,
+      5,
+      5
+    ],
+    [
+      64,
+      16,
+      64,
+      16,
+      5,
+      5
+    ],
+    [
+      64,
+      16,
+      16,
+      16,
+      5,
+      5
+    ],
+    [
+      5,
+      16,
+      5,
+      64,
+      16,
+      16,
+      5,
+      64
+    ],
+    [
+      16,
+      64,
+      5,
+      16,
+      16
+    ]
+  ],
+  "TOMData": [
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "LayerNorm",
+          [
+            16
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "LayerNorm",
+          [
+            5,
+            5,
+            16,
+            64,
+            64
+          ]
+        ],
+        [
+          "Softmax",
+          -5
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "leaky_relu",
+          null
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    }
+  ],
+  "ADFNNInputModule": "None",
+  "ADFNNOutputModule": "None",
+  "PostConvChannels": [],
+  "ADFNNResiduals": false,
+  "ADFNNResidualFq": -1
+}

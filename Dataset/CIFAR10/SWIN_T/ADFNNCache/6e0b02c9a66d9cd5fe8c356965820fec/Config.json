@@ -1,0 +1,119 @@
+{
+  "InputShape": [
+    16,
+    192
+  ],
+  "OutputShapes": [
+    [
+      3,
+      16,
+      192
+    ],
+    [
+      64
+    ],
+    [
+      16,
+      192
+    ],
+    [
+      16,
+      64,
+      3
+    ]
+  ],
+  "TEMID": "991b734367475c6738d1d16d5a654475",
+  "TOMIDs": [
+    "8b6787b035f0d382711a345c79d0d376",
+    "c9969d97d94f17d68abed23bfe827407",
+    "2c12ab8878bcd42bc214053dfa789ba4",
+    "20391568090cf7bfc05f05576e5563d2"
+  ],
+  "TOMShapes": [
+    [
+      3,
+      16,
+      192
+    ],
+    [
+      192,
+      64,
+      16,
+      192,
+      3
+    ],
+    [
+      3,
+      64,
+      192,
+      16
+    ],
+    [
+      16,
+      192,
+      64,
+      3
+    ]
+  ],
+  "TOMData": [
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "relu6",
+          null
+        ],
+        [
+          "LayerNorm",
+          [
+            192
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "LayerNorm",
+          [
+            64
+          ]
+        ],
+        [
+          "Softmax",
+          -1
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "LayerNorm",
+          [
+            16,
+            192
+          ]
+        ],
+        [
+          "Softmax",
+          -2
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    }
+  ],
+  "ADFNNInputModule": "None",
+  "ADFNNOutputModule": "None",
+  "PostConvChannels": [],
+  "ADFNNResiduals": false,
+  "ADFNNResidualFq": -1
+}

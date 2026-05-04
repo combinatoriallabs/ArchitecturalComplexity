@@ -1,0 +1,193 @@
+{
+  "InputShape": [
+    16,
+    192
+  ],
+  "OutputShapes": [
+    [
+      4,
+      16,
+      16,
+      192
+    ],
+    [
+      2,
+      3,
+      8,
+      16
+    ],
+    [
+      2,
+      3,
+      8
+    ],
+    [
+      3,
+      16,
+      16,
+      64
+    ],
+    [
+      2,
+      8,
+      16,
+      192
+    ],
+    [
+      16,
+      64,
+      3
+    ]
+  ],
+  "TEMID": "1632c9485531603aada344107a9e60ae",
+  "TOMIDs": [
+    "b4dae87d2826e8d477d822945bf40821",
+    "ef72fa431b485ea6f54a181212fea5db",
+    "8d5bf435c3c62f41eb41ad22a3d335fe",
+    "1559e923beaccada4dc11abdf283be29",
+    "b490176c24d95dd9188c7f3829dc8a0c",
+    "779068ce79fb2f7d9925a6317b21ef84"
+  ],
+  "TOMShapes": [
+    [
+      16,
+      4,
+      192,
+      16
+    ],
+    [
+      3,
+      2,
+      4,
+      16,
+      4,
+      8,
+      192,
+      16
+    ],
+    [
+      8,
+      3,
+      16,
+      4,
+      16,
+      2,
+      192
+    ],
+    [
+      64,
+      16,
+      2,
+      3,
+      16,
+      8,
+      192
+    ],
+    [
+      2,
+      3,
+      16,
+      192,
+      8,
+      16,
+      64
+    ],
+    [
+      3,
+      192,
+      2,
+      64,
+      8,
+      16
+    ]
+  ],
+  "TOMData": [
+    {
+      "RowSpaceOp": "add",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "relu6",
+          null
+        ],
+        [
+          "LayerNorm",
+          [
+            16,
+            192
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "leaky_relu",
+          null
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "LayerNorm",
+          [
+            2,
+            3,
+            8
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "relu6",
+          null
+        ],
+        [
+          "LayerNorm",
+          [
+            16,
+            16,
+            64
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "leaky_relu",
+          null
+        ],
+        [
+          "LayerNorm",
+          [
+            8,
+            16,
+            192
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    }
+  ],
+  "ADFNNInputModule": "None",
+  "ADFNNOutputModule": "None",
+  "PostConvChannels": [],
+  "ADFNNResiduals": false,
+  "ADFNNResidualFq": -1
+}

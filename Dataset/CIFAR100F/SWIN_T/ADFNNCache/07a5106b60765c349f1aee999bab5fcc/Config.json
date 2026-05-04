@@ -1,0 +1,172 @@
+{
+  "InputShape": [
+    16,
+    192
+  ],
+  "OutputShapes": [
+    [
+      4,
+      16,
+      16,
+      192
+    ],
+    [
+      2,
+      3,
+      8,
+      16
+    ],
+    [
+      2,
+      3,
+      8
+    ],
+    [
+      3,
+      16,
+      16,
+      64
+    ],
+    [
+      2,
+      8,
+      16,
+      192
+    ],
+    [
+      16,
+      64,
+      3
+    ]
+  ],
+  "TEMID": "e3f358145323065b02eb3484943d0add",
+  "TOMIDs": [
+    "f215734ed34ac73fa901ff38e128c25f",
+    "aa524d6bc3b7cefc0aed711576e103ec",
+    "50afa60ade36eaa1d81770b5d58c5c17",
+    "fd523c364bef9576dbda052b28eeb542",
+    "9c7339bdb47d22a42901ebd8c68993d6",
+    "196eecdab267cfcddfb212885d7aeb3d"
+  ],
+  "TOMShapes": [
+    [
+      16,
+      16,
+      4,
+      192
+    ],
+    [
+      16,
+      16,
+      16,
+      2,
+      4,
+      8,
+      192,
+      3
+    ],
+    [
+      16,
+      16,
+      2,
+      8,
+      3,
+      192
+    ],
+    [
+      16,
+      16,
+      2,
+      8,
+      192,
+      3,
+      64,
+      16
+    ],
+    [
+      3,
+      16,
+      16,
+      2,
+      8,
+      192,
+      64
+    ],
+    [
+      2,
+      64,
+      3,
+      2,
+      16,
+      192,
+      8
+    ]
+  ],
+  "TOMData": [
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "relu6",
+          null
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "Softmax",
+          -1
+        ],
+        [
+          "LayerNorm",
+          [
+            3,
+            8
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "relu6",
+          null
+        ],
+        [
+          "LayerNorm",
+          [
+            16,
+            64,
+            3
+          ]
+        ]
+      ]
+    }
+  ],
+  "ADFNNInputModule": "None",
+  "ADFNNOutputModule": "None",
+  "PostConvChannels": [],
+  "ADFNNResiduals": false,
+  "ADFNNResidualFq": -1
+}

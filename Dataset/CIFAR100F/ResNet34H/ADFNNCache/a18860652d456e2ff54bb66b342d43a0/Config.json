@@ -1,0 +1,146 @@
+{
+  "InputShape": [
+    64,
+    16,
+    16,
+    5,
+    5
+  ],
+  "OutputShapes": [
+    [
+      2,
+      5,
+      8,
+      16,
+      64
+    ],
+    [
+      16,
+      64
+    ],
+    [
+      16
+    ],
+    [
+      16,
+      16
+    ],
+    [
+      16,
+      16
+    ]
+  ],
+  "TEMID": "67980b14c5377de3c064a796a11a5160",
+  "TOMIDs": [
+    "722d9b1cb9f02a88807b9b8ad5401f89",
+    "6578b6b4182e3910c751f6dacd31f84b",
+    "0e3f03ba0e7f13c45c48b282dd5031e7",
+    "de10ae4293c14322c2ef8f947b6339d8",
+    "b7920daefbce6855fabe0ed926481cf5"
+  ],
+  "TOMShapes": [
+    [
+      64,
+      8,
+      16,
+      16,
+      5,
+      5,
+      2
+    ],
+    [
+      2,
+      64,
+      16,
+      8,
+      16,
+      5,
+      5
+    ],
+    [
+      2,
+      5,
+      64,
+      8,
+      16,
+      64
+    ],
+    [
+      2,
+      5,
+      16,
+      8,
+      16,
+      64
+    ],
+    [
+      16,
+      2,
+      16,
+      5,
+      8,
+      16,
+      64
+    ]
+  ],
+  "TOMData": [
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "Softmax",
+          -3
+        ],
+        [
+          "LayerNorm",
+          [
+            16,
+            64
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "Softmax",
+          -1
+        ],
+        [
+          "LayerNorm",
+          [
+            16
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "leaky_relu",
+          null
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    }
+  ],
+  "ADFNNInputModule": "None",
+  "ADFNNOutputModule": "None",
+  "PostConvChannels": [],
+  "ADFNNResiduals": false,
+  "ADFNNResidualFq": -1
+}

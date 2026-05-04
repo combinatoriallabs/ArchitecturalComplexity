@@ -1,0 +1,165 @@
+{
+  "InputShape": [
+    64,
+    16,
+    16,
+    5,
+    5
+  ],
+  "OutputShapes": [
+    [
+      5
+    ],
+    [
+      2,
+      4,
+      4,
+      5,
+      8
+    ],
+    [
+      2,
+      2,
+      2,
+      8,
+      8,
+      8
+    ],
+    [
+      2,
+      8,
+      16
+    ],
+    [
+      16,
+      16
+    ]
+  ],
+  "TEMID": "1a6040158648ba2a77c27cff1e3de414",
+  "TOMIDs": [
+    "b3de2d6c474c5df98e7506edb01e7289",
+    "db29482ead5b45442510ea6b82bf079e",
+    "9af7a65ab703b15aa3ce2173d835bc75",
+    "ee3661b6d791a6b937272050f015f505",
+    "767d47d777d215db13c0e3bf95985fd2"
+  ],
+  "TOMShapes": [
+    [
+      64,
+      16,
+      16,
+      5,
+      5
+    ],
+    [
+      5,
+      64,
+      4,
+      5,
+      16,
+      4,
+      2,
+      8,
+      5
+    ],
+    [
+      5,
+      2,
+      2,
+      4,
+      8,
+      8,
+      4,
+      2,
+      8
+    ],
+    [
+      2,
+      2,
+      2,
+      8,
+      16,
+      8,
+      5,
+      8
+    ],
+    [
+      16,
+      5,
+      2,
+      4,
+      8,
+      8,
+      2,
+      16
+    ]
+  ],
+  "TOMData": [
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "relu6",
+          null
+        ],
+        [
+          "LayerNorm",
+          [
+            5
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "Softmax",
+          -2
+        ],
+        [
+          "LayerNorm",
+          [
+            2,
+            4,
+            4,
+            5,
+            8
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "Softmax",
+          -5
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "Softmax",
+          -2
+        ]
+      ]
+    }
+  ],
+  "ADFNNInputModule": "None",
+  "ADFNNOutputModule": "None",
+  "PostConvChannels": [],
+  "ADFNNResiduals": false,
+  "ADFNNResidualFq": -1
+}

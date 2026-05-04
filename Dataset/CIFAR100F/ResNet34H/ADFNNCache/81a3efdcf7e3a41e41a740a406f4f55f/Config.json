@@ -1,0 +1,148 @@
+{
+  "InputShape": [
+    64,
+    16,
+    16,
+    5,
+    5
+  ],
+  "OutputShapes": [
+    [
+      4,
+      4,
+      5,
+      16
+    ],
+    [
+      2,
+      32
+    ],
+    [
+      5,
+      16,
+      16
+    ],
+    [
+      2,
+      5,
+      8,
+      16,
+      16
+    ],
+    [
+      16,
+      16
+    ]
+  ],
+  "TEMID": "aab37758bbce9326727fc4085d170130",
+  "TOMIDs": [
+    "f8ba369da693b2f819b671ad4abb4b14",
+    "58b7e41a45259ddbc1012fd024c6d9c2",
+    "3eb0d01b2de71ae57f1365c502819f4f",
+    "8916a0e2f731113ef5620c98b2bad731",
+    "8522254a8d0b6f959d9c7e710c6f3cb9"
+  ],
+  "TOMShapes": [
+    [
+      64,
+      4,
+      16,
+      16,
+      4,
+      5,
+      5
+    ],
+    [
+      32,
+      64,
+      4,
+      16,
+      4,
+      2,
+      5
+    ],
+    [
+      64,
+      4,
+      16,
+      4,
+      16,
+      5
+    ],
+    [
+      64,
+      5,
+      4,
+      16,
+      8,
+      4,
+      5,
+      16,
+      2
+    ],
+    [
+      2,
+      5,
+      8,
+      16,
+      16,
+      32
+    ]
+  ],
+  "TOMData": [
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "relu6",
+          null
+        ],
+        [
+          "LayerNorm",
+          [
+            16,
+            16
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "Softmax",
+          -3
+        ],
+        [
+          "LayerNorm",
+          [
+            16,
+            16
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    }
+  ],
+  "ADFNNInputModule": "None",
+  "ADFNNOutputModule": "None",
+  "PostConvChannels": [],
+  "ADFNNResiduals": false,
+  "ADFNNResidualFq": -1
+}

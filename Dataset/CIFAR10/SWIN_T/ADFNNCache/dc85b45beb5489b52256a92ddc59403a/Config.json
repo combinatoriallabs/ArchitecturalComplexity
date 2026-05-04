@@ -1,0 +1,140 @@
+{
+  "InputShape": [
+    16,
+    192
+  ],
+  "OutputShapes": [
+    [
+      16,
+      16,
+      64,
+      192
+    ],
+    [
+      3,
+      192,
+      192
+    ],
+    [
+      16
+    ],
+    [
+      16,
+      64
+    ],
+    [
+      16,
+      64,
+      3
+    ]
+  ],
+  "TEMID": "a9c61f5f53cbcf4a08426d18014ede46",
+  "TOMIDs": [
+    "b138b8c5322d9f28c49a38a30a478341",
+    "9f26a27aaafbcf093f25ef0db34bf305",
+    "3252ed8d18dd1d878aff1aef7fd8532d",
+    "b920e3d7a5f6577fd7b82939f1394eb0",
+    "0a58c477ce8e075625af324beab131c1"
+  ],
+  "TOMShapes": [
+    [
+      16,
+      64,
+      192,
+      16
+    ],
+    [
+      192,
+      16,
+      192,
+      3
+    ],
+    [
+      192,
+      192,
+      16,
+      3
+    ],
+    [
+      192,
+      64,
+      192,
+      16
+    ],
+    [
+      3,
+      16,
+      16,
+      64,
+      64,
+      192
+    ]
+  ],
+  "TOMData": [
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "relu6",
+          null
+        ],
+        [
+          "LayerNorm",
+          [
+            3,
+            192,
+            192
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "leaky_relu",
+          null
+        ],
+        [
+          "LayerNorm",
+          [
+            16
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "Softmax",
+          -2
+        ],
+        [
+          "LayerNorm",
+          [
+            64
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    }
+  ],
+  "ADFNNInputModule": "None",
+  "ADFNNOutputModule": "None",
+  "PostConvChannels": [],
+  "ADFNNResiduals": false,
+  "ADFNNResidualFq": -1
+}

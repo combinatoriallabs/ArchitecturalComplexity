@@ -1,0 +1,146 @@
+{
+  "InputShape": [
+    64,
+    16,
+    16,
+    5,
+    5
+  ],
+  "OutputShapes": [
+    [
+      2,
+      16,
+      32
+    ],
+    [
+      5,
+      16
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      2,
+      8,
+      16,
+      16
+    ],
+    [
+      16,
+      16
+    ]
+  ],
+  "TEMID": "d2f5da6366ce4773e4e52742bba1639f",
+  "TOMIDs": [
+    "ffa7064f3a6b59dd6cbfaf64c3e3ee96",
+    "0bc3dcaf47aafb33c05bfbe48fadb248",
+    "f1cae2b7d010deb52d52bd5c95caed53",
+    "a67d05c6e3aac6f38fced0048f666173",
+    "92646c2fbd23a838a448f10dc4efd4e1"
+  ],
+  "TOMShapes": [
+    [
+      2,
+      64,
+      16,
+      32,
+      16,
+      5,
+      5
+    ],
+    [
+      2,
+      64,
+      16,
+      32,
+      5
+    ],
+    [
+      32,
+      64,
+      16,
+      5,
+      4,
+      4
+    ],
+    [
+      32,
+      2,
+      16,
+      16,
+      5,
+      8
+    ],
+    [
+      4,
+      2,
+      8,
+      4,
+      16,
+      5,
+      16
+    ]
+  ],
+  "TOMData": [
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "leaky_relu",
+          null
+        ],
+        [
+          "LayerNorm",
+          [
+            16,
+            32
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "Softmax",
+          -2
+        ],
+        [
+          "LayerNorm",
+          [
+            5,
+            16
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "leaky_relu",
+          null
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    }
+  ],
+  "ADFNNInputModule": "None",
+  "ADFNNOutputModule": "None",
+  "PostConvChannels": [],
+  "ADFNNResiduals": false,
+  "ADFNNResidualFq": -1
+}

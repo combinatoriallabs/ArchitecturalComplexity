@@ -1,0 +1,171 @@
+{
+  "InputShape": [
+    16,
+    192
+  ],
+  "OutputShapes": [
+    [
+      2,
+      32
+    ],
+    [
+      2,
+      4,
+      4,
+      8
+    ],
+    [
+      64
+    ],
+    [
+      3,
+      16,
+      16,
+      16
+    ],
+    [
+      3,
+      16
+    ],
+    [
+      16,
+      64,
+      3
+    ]
+  ],
+  "TEMID": "960686dda7d78e3bb75afb90298de934",
+  "TOMIDs": [
+    "15f22320963714b6172235ed33b7b0dd",
+    "b5cf940847f332d77526e42096aace91",
+    "48c4d93cf26af6805e37ed4237fa9151",
+    "8ccabf46f7a223a5b200db445ffcb4a6",
+    "41ef60b017227f6eb376b9ef626bbc75",
+    "71bea25668cc14ff5ad4e24f051566b2"
+  ],
+  "TOMShapes": [
+    [
+      2,
+      16,
+      192,
+      32
+    ],
+    [
+      4,
+      4,
+      2,
+      16,
+      32,
+      192,
+      8,
+      2,
+      32
+    ],
+    [
+      16,
+      192,
+      64,
+      2,
+      32
+    ],
+    [
+      16,
+      16,
+      64,
+      3,
+      16,
+      192
+    ],
+    [
+      3,
+      16,
+      2,
+      16,
+      32,
+      16
+    ],
+    [
+      3,
+      2,
+      16,
+      4,
+      64,
+      4,
+      8
+    ]
+  ],
+  "TOMData": [
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "relu6",
+          null
+        ],
+        [
+          "LayerNorm",
+          [
+            2,
+            32
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "LayerNorm",
+          [
+            4,
+            4,
+            8
+          ]
+        ],
+        [
+          "Softmax",
+          -3
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "LayerNorm",
+          [
+            16,
+            16,
+            16
+          ]
+        ],
+        [
+          "relu6",
+          null
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    }
+  ],
+  "ADFNNInputModule": "None",
+  "ADFNNOutputModule": "None",
+  "PostConvChannels": [],
+  "ADFNNResiduals": false,
+  "ADFNNResidualFq": -1
+}

@@ -1,0 +1,164 @@
+{
+  "InputShape": [
+    64,
+    16,
+    16,
+    5,
+    5
+  ],
+  "OutputShapes": [
+    [
+      2,
+      5,
+      8,
+      16
+    ],
+    [
+      2,
+      5,
+      8,
+      64
+    ],
+    [
+      16,
+      16
+    ],
+    [
+      2,
+      2,
+      8,
+      8
+    ],
+    [
+      16,
+      16
+    ]
+  ],
+  "TEMID": "8ebfdb6e57b912f912e106a89777bb46",
+  "TOMIDs": [
+    "9f7a1859c4a556c73f6edba51e64ee2f",
+    "254d6f0eebf1e8be5375a38e08588b87",
+    "91ff4902859c10585ae78209f91f8c63",
+    "6fda8f8821930bebe35d7a2e0decff91",
+    "7dcb336dcd9cf81efe40dbf05eec3547"
+  ],
+  "TOMShapes": [
+    [
+      2,
+      64,
+      16,
+      16,
+      5,
+      5,
+      8
+    ],
+    [
+      64,
+      16,
+      8,
+      16,
+      2,
+      5,
+      5
+    ],
+    [
+      5,
+      2,
+      16,
+      16,
+      8,
+      64
+    ],
+    [
+      2,
+      16,
+      16,
+      8,
+      64,
+      5,
+      8,
+      2
+    ],
+    [
+      2,
+      8,
+      16,
+      2,
+      5,
+      8,
+      16
+    ]
+  ],
+  "TOMData": [
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "Softmax",
+          -1
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "Softmax",
+          -2
+        ],
+        [
+          "LayerNorm",
+          [
+            16,
+            16
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "relu6",
+          null
+        ],
+        [
+          "LayerNorm",
+          [
+            8,
+            8
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "Softmax",
+          -1
+        ],
+        [
+          "LayerNorm",
+          [
+            16
+          ]
+        ]
+      ]
+    }
+  ],
+  "ADFNNInputModule": "None",
+  "ADFNNOutputModule": "None",
+  "PostConvChannels": [],
+  "ADFNNResiduals": false,
+  "ADFNNResidualFq": -1
+}

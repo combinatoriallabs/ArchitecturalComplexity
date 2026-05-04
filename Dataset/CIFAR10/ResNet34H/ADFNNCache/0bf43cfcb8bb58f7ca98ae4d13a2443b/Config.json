@@ -1,0 +1,149 @@
+{
+  "InputShape": [
+    64,
+    16,
+    16,
+    5,
+    5
+  ],
+  "OutputShapes": [
+    [
+      2,
+      32
+    ],
+    [
+      5,
+      16,
+      64
+    ],
+    [
+      2,
+      8
+    ],
+    [
+      16,
+      16,
+      16,
+      16
+    ],
+    [
+      16,
+      16
+    ]
+  ],
+  "TEMID": "816c7fe06a2709e44132528c1aea8f89",
+  "TOMIDs": [
+    "d10804695bdecc10e4589d978f0c3ba7",
+    "df8894adf4ef82bce8cf59d0210ae335",
+    "3321df8e00c2b9562c9e692adbe13a4e",
+    "d4cba736c72f7f9dfd5aa20edcdc582e",
+    "c97bd4bcdd5537fffb2d4dabf63a24c0"
+  ],
+  "TOMShapes": [
+    [
+      64,
+      16,
+      16,
+      5,
+      32,
+      2,
+      5
+    ],
+    [
+      64,
+      16,
+      16,
+      5,
+      2,
+      5
+    ],
+    [
+      2,
+      16,
+      64,
+      5,
+      8,
+      32,
+      2
+    ],
+    [
+      64,
+      16,
+      16,
+      16,
+      16,
+      32,
+      5,
+      2
+    ],
+    [
+      16,
+      2,
+      16,
+      8,
+      16,
+      16
+    ]
+  ],
+  "TOMData": [
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "leaky_relu",
+          null
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": []
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "Softmax",
+          -3
+        ],
+        [
+          "LayerNorm",
+          [
+            16,
+            16,
+            16
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "LayerNorm",
+          [
+            16
+          ]
+        ],
+        [
+          "leaky_relu",
+          null
+        ]
+      ]
+    }
+  ],
+  "ADFNNInputModule": "None",
+  "ADFNNOutputModule": "None",
+  "PostConvChannels": [],
+  "ADFNNResiduals": false,
+  "ADFNNResidualFq": -1
+}

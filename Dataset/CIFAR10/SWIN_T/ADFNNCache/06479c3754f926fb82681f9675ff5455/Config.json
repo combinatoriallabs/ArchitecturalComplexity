@@ -1,0 +1,142 @@
+{
+  "InputShape": [
+    16,
+    192
+  ],
+  "OutputShapes": [
+    [
+      3,
+      3,
+      64
+    ],
+    [
+      16,
+      64,
+      192
+    ],
+    [
+      3,
+      6,
+      16,
+      32
+    ],
+    [
+      16,
+      64,
+      3
+    ]
+  ],
+  "TEMID": "41773afa036632db77bb281dcdb743a2",
+  "TOMIDs": [
+    "e0628ed081d2d7bf59ed5f392ab9e045",
+    "b7c70e021e08b1cc9b2b08138302a534",
+    "792040a05ce8e689f2ce122a48e8b209",
+    "eefb8d91895a047089821d3fb821cac5"
+  ],
+  "TOMShapes": [
+    [
+      64,
+      16,
+      192,
+      3,
+      3
+    ],
+    [
+      16,
+      3,
+      3,
+      64,
+      192
+    ],
+    [
+      3,
+      3,
+      16,
+      64,
+      32,
+      192,
+      6,
+      3
+    ],
+    [
+      64,
+      6,
+      16,
+      32,
+      3
+    ]
+  ],
+  "TOMData": [
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "Softmax",
+          -2
+        ],
+        [
+          "LayerNorm",
+          [
+            64
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "leaky_relu",
+          null
+        ],
+        [
+          "LayerNorm",
+          [
+            16,
+            64,
+            192
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "LayerNorm",
+          [
+            3,
+            6,
+            16,
+            32
+          ]
+        ]
+      ]
+    },
+    {
+      "RowSpaceOp": "mult",
+      "ContractOp": "add",
+      "UnaryOps": [
+        [
+          "relu6",
+          null
+        ],
+        [
+          "LayerNorm",
+          [
+            64,
+            3
+          ]
+        ]
+      ]
+    }
+  ],
+  "ADFNNInputModule": "None",
+  "ADFNNOutputModule": "None",
+  "PostConvChannels": [],
+  "ADFNNResiduals": false,
+  "ADFNNResidualFq": -1
+}

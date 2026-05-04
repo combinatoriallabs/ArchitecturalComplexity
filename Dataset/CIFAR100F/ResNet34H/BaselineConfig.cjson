@@ -1,0 +1,176 @@
+{
+  "Model": "ResNet9",
+  "BatchNorm": true,
+  "AvgTokens": true,
+  "PreTrained": false,
+  "PreTrained:Params": {
+    "BackboneLRMultiplier": -1
+  },
+  "RandomInit": false,
+  "DisableInputLayers": false,
+  "ActivationFunction": "LeakyReLU",
+  "Model:ADFNN:Params": {
+    "ADFNNCacheDir": "ADFNNCache",
+    "ADFNNModelID": "",
+    "ADFNNStacks": 1,
+    "ADFNNInputModule": "None",
+    "ADFNNOutputModule": "None",
+    "PreConvChannels": -1,
+    "PostConvChannels": [],
+    "ADFNNResiduals": false,
+    "ADFNNResidualFq": -1,
+    "InputShape": [],
+    "OutputShapes": [
+      []
+    ],
+    "TEMID": "",
+    "TOMShapes": [],
+    "TOMIDs": [],
+    "TOMData": []
+  },
+  "Model:ViT,TcT:Params": {
+    "AvgTokens": true
+  },
+  "Model:SWIN:Params": {
+    "WindowSize": 4
+  },
+  "Model:MLP:Params": {
+    "NormalizeMLP": false,
+    "MLPStructure": []
+  },
+  "Model:FishMLP:Params": {
+    "FishMLPStructure": []
+  },
+  "Model:FishCNN:Params": {
+    "FishCNNStructure": []
+  },
+  "Model:Cone3CNN:Params": {
+    "Cone3CNNStructure": []
+  },
+  "Model:QuadStageCNN,QuadStageDualFishCNN:Params": {
+    "QuadStageCNNStructure": []
+  },
+  "Model:FishCNN,FishMLP:Params": {
+    "FishType": 1,
+    "Initialization": "uniform"
+  },
+  "Model:FishCNN,QuadStageCNN,Cone3CNN:Params": {
+    "FishPooling": false,
+    "ConvPooling": false,
+    "PatchSize": 3,
+    "FishPooling,ConvPooling:Params": {
+      "PoolingStartStage": 3
+    }
+  },
+  "Model:Cone3MLP:Params": {
+    "Cone3MLPStructure": [
+      []
+    ]
+  },
+  "Model:ViMLP:Params": {
+    "ViMLPStructure": []
+  },
+  "Model:ViFullMatMulMLP,ViHalfMatMulMLP:Params": {
+    "ViFullMatMulMLPStructure": [],
+    "Reduction": "sum"
+  },
+  "Model:ViHalfMatMulMLP:Params": {
+    "HalfMatMulType": 1
+  },
+  "Model:ViDecompLinMLP:Params": {
+    "ViDecompLinMLPStructure": [
+      []
+    ],
+    "ViDecompLinMLPActivation": "LeakyReLU",
+    "ResidualMLPLayers": false
+  },
+  "Model:ViBowtieLinMLP:Params": {
+    "Views": 4,
+    "ProjectDim": 16
+  },
+  "Model:ViBowtieLinMLP,ViSA,ViK31SA,ViMHSA,ViK22MHSA:Params": {
+    "Layers": -1
+  },
+  "Model:ViSA,ViK31SA,ViMHSA,ViK22MHSA:Params": {
+    "LayerNorms": [
+      true,
+      true,
+      false
+    ],
+    "FinalActivation": false
+  },
+  "Model:ViSA,ViMHSA:Params": {
+    "SoftmaxDim": -1,
+    "QKDim": -1,
+    "MultResidual": false
+  },
+  "Model:ViMHSA,ViK22MHSA:Params": {
+    "Heads": -1,
+    "MLPDim": -1
+  },
+  "Model:ViK22MHSA:Params": {
+    "Residual": true,
+    "ExtraResidual": false,
+    "NumV": 2
+  },
+  "Model:TOResNet9,TOResNet18,TOResNet32,TOResNet18Inv:Params": {
+    "OperationTOM": [
+      []
+    ]
+  },
+  "Model:ViMLP,ViFullMatMulMLP,ViHalfMatMulMLP,ViDecompLinMLP,ViBowtieLinMLP,ViSA,ViK31SA,ViMHSA,ViK22MHSA:Params": {
+    "ChunkSize": 3,
+    "EmbedDim": -1
+  },
+  "Model:ViK22MHSA,Cone3CNN,FishCNN:Params": {
+    "AggregationMode": 1
+  },
+  "Dataset": "CIFAR10",
+  "Dataset:CIFAR100S:Params": {
+    "Subset": 7
+  },
+  "Dataset:Features:Params": {
+    "FeatureDatasetModel": "",
+    "FeatureDatasetLayerIndex": -1
+  },
+  "Normalization": "MeanVar",
+  "DownSample": -1,
+  "SubSample": 1.0,
+  "DataAugmentation": false,
+  "DataAugmentation:Params": {
+    "DataAugOnTest": false,
+    "RandAug": false
+  },
+  "GaussianNoiseAug": false,
+  "GaussianNoiseAug:Params": {
+    "GNAExp": 0.9,
+    "GNAVar": 0.1
+  },
+  "Optimizer": "AdamW",
+  "LearningRate": 0.0075,
+  "WeightDecay": -1,
+  "LRScheduler": "OneCycle",
+  "LRScheduler:OneCycle:Params": {
+    "PctStart": 0.3
+  },
+  "LRScheduler:MultiStep:Params": {
+    "LRSteps": [],
+    "LRStepMult": 0.1
+  },
+  "LRScheduler:Exp:Params": {
+    "ExpPower": 0.9
+  },
+  "BatchSize": 128,
+  "NumEpochs": 25,
+  "NumRuns": 1,
+  "EvalInterval": 1,
+  "CheckpointInterval": -1,
+  "SaveModel": true,
+  "SaveResult": true,
+  ":": [
+    "SaveModel",
+    "SaveResult",
+    "EvalInterval",
+    "CheckpointInterval"
+  ]
+}
