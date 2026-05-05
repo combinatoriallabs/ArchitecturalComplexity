@@ -10,7 +10,7 @@ This code was developed for use on linux (specifically, ubuntu 24 and centos 10)
 * Ensure python 3.12 is installed, then run: `python3 -m pip install requirements.txt`
 * Run `python3 ./VisualizeDataset.py`.
     - You will be prompted to enter a dataset path. The codebase will use the provided path to store dataset files. **Requires ~10gb disk space**.
-    - You may see warning messages about missing weights. Instructions for downloading them are given below.
+    - You may see warning messages about missing weights. Instructions for downloading them are given below. **Weights require ~20gb disk space**.
 * If setup was successful, this will cycle through each combination of dataset and baseline architecture and display scatter plots of all samples.
 
 ## Downloading Weights
@@ -42,7 +42,26 @@ This codebase is based around experiment-to-disk hashmaps. There is one such has
 The `Train.py` script is the starting point for conducting new experiments. It is suggested to open this script in your editor of choice, as a basic config is loaded there. After modifying this config to your liking, run `python ./Train.py`. If you have already trained a model for that configuration, the training run information will be displayed. If not, you will be prompted to launch a training run for the configuration. 
 
 ### Re-training Sampled Architectures
-* Obtain the ADFNN ID for the sampled architecture you wish to re-train. These can be obtained by clicking on the scatter plots in default mode. The Red Star Architecture has ID: 3cad4fc28af6344afe380ee3bd9092a7
+* Obtain the ADFNN ID for the sampled architecture you wish to re-train. These can be obtained by clicking on the scatter plots in default mode. Here are the IDs required to reproduce the results:
+    * Red Star Architecture: 3cad4fc28af6344afe380ee3bd9092a7
+    * Random samples:
+        * CIFAR10
+            * ResNet Good: 1b9ac8126536997fc35f1a54cd80b8f0
+            * ResNet Bad: afaffe46bf7b5fe1abb75c74383f6315
+            * Swin Good: 8e9da473fe9c90377b0bfe333d9f334b
+            * Swin Bad: 3929dbffcfffee00ab68f02ae605dfbd
+        * CIFAR100
+            * ResNet Good: 7745a06402c0629c772e76f13380829e
+            * ResNet Bad: b506540fe79ac1fae4ecdadc0cc4bc00
+            * Swin Good: 8d3cb2f252dbea0ea1cb706f4477d2a4
+            * Swin Bad: 14241a9d9d78b4fc6cd2368f3f1beaaf
+        * Tiny Imagenet
+            * ResNet Good: f5adf50b4860b2ded3b2da087a5cae0c
+            * ResNet Bad: 044dc36d105057f7ea5ecd497d8c2efb
+            * Swin Good: d5fe2790f8fa23c7a08372289c5466ba
+            * Swin Bad: be0fd9efd2bb0bb5da4fc89446de7b49
+
+By default, Train.py is setup to retrain the "red star" architecture. If you want to do something else, below are instructions:
 * Ensure the `Model` key in the `Train.py` config on line 18 is set to `"ADFNN"`.
 * Enter the dataset on line 28.
 * Enter the ID to the `ADFNNModelID` key in the `Train.py` config on line 20.
