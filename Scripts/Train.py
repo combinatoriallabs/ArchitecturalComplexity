@@ -10,6 +10,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
 from TrainerUtils import *
 from Arch.Models.ModelUtils import *
 
+import sys
+
 def main():
     Config = {
         #"ADFNNCacheDir": "ADFNNCache",
@@ -53,13 +55,13 @@ def main():
 
     T = ADFNNTrainer("../Trainer/", Config, bStartLog = True)
 
-    T.FindCachedStuff("Result.json", bPrint = True)
+    #T.FindCachedStuff("Result.json", bPrint = True)
 
     T.ILoadModel()
     PrintModelSummary(T.tModel)
     print(CountParams(T.tModel))
     #T.IGenHash(bPrint = True)
-    T.IDisplayResult()
+    T.IDisplayResult(bY = True if (len(sys.argv) == 2 and sys.argv[1].lower() == "-y") else False)
 
 
 if __name__ == "__main__":

@@ -585,7 +585,7 @@ if __name__ == "__main__":
         if sys.argv[i] == "-m": strArch = sys.argv[i+1]
         if sys.argv[i] == "-d": strDS = sys.argv[i+1]
         if sys.argv[i] == "-PA": bPA = True
-        if sys.argv[i] == "-iv":
+        if sys.argv[i] == "-x":
             bAM = True
             strX = sys.argv[i+1]
 

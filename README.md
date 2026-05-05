@@ -6,11 +6,12 @@ This is the public-facing repo for code associated to the paper "On the Architec
 This code was developed for use on linux (specifically, ubuntu 24 and centos 10) and may **not work well on other operating systems**. 
 
 ## First Steps
-* Clone this repository somewhere, then `cd` into `Scripts/`.
-* Ensure python 3.12 is installed, then run: `python3 -m pip install requirements.txt`
+* Clone this repository somewhere and `cd` into the main repo folder.
+* Ensure python 3.12 is installed, then run: `python3 -m pip install -r requirements.txt`
+* `cd` into `Scripts/`.
 * Run `python3 ./VisualizeDataset.py`.
-    - You will be prompted to enter a dataset path. The codebase will use the provided path to store dataset files. **Requires ~10gb disk space**.
-    - You may see warning messages about missing weights. Instructions for downloading them are given below. **Weights require ~20gb disk space**.
+    - You will be prompted to enter a dataset path. The codebase will use the provided path to store dataset files. **Datasets require ~10gb disk space**.
+    - You will see notices about missing weights. Instructions for downloading the weights are given below. **Weights require ~20gb disk space**.
 * If setup was successful, this will cycle through each combination of dataset and baseline architecture and display scatter plots of all samples.
 
 ## Downloading Weights
@@ -37,9 +38,11 @@ Run `python3 ./VisualizeDataset.py -x {INDEPENDENT_VARIABLE}` to open a combined
 All modes accept the additional arguments: `-m {MODEL} -d {DATASET}`. `MODEL` should be either `ResNet` or `SWIN`, whereas `DATASET` should be either `CIFAR10`, `CIFAR100F`, or `TinyImagenet`.
 
 ## Training Models
-This codebase is based around experiment-to-disk hashmaps. There is one such hashmap for each dataset/model combo. Additionally, the `Trainer/` folder is setup as a reletively empty experiment cache. Any models trained after cloning this repository will be stored in this cache by default.
+This codebase is based on experiment-to-disk hashmaps. There is one such hashmap for each dataset/model combo. Additionally, the `Trainer/` folder is setup as a reletively empty experiment cache. Any models trained after cloning this repository will be stored in this cache by default.
 
-The `Train.py` script is the starting point for conducting new experiments. It is suggested to open this script in your editor of choice, as a basic config is loaded there. After modifying this config to your liking, run `python ./Train.py`. If you have already trained a model for that configuration, the training run information will be displayed. If not, you will be prompted to launch a training run for the configuration. 
+The `Train.py` script is the starting point for conducting new experiments. It is suggested to open this script in your editor of choice, as a basic config is loaded there. After modifying this config to your liking, run `python ./Train.py`. If you have already trained a model for that configuration, the training run information will be displayed. If not, you will be prompted to launch a training run for the configuration. You can also pass `-Y` to `Train.py` to automatically train missing configurations.
+
+By default, Train.py is setup to retrain the "red star" architecture. Simply run `python ./Train.py` if you want to reproduce results for this sample. If you want to do something else, follow the instructions in the sections below.
 
 ### Re-training Sampled Architectures
 * Obtain the ADFNN ID for the sampled architecture you wish to re-train. These can be obtained by clicking on the scatter plots in default mode. Here are the IDs required to reproduce the results:
@@ -60,8 +63,6 @@ The `Train.py` script is the starting point for conducting new experiments. It i
             * ResNet Bad: 044dc36d105057f7ea5ecd497d8c2efb
             * Swin Good: d5fe2790f8fa23c7a08372289c5466ba
             * Swin Bad: be0fd9efd2bb0bb5da4fc89446de7b49
-
-By default, Train.py is setup to retrain the "red star" architecture. If you want to do something else, below are instructions:
 * Ensure the `Model` key in the `Train.py` config on line 18 is set to `"ADFNN"`.
 * Enter the dataset on line 28.
 * Enter the ID to the `ADFNNModelID` key in the `Train.py` config on line 20.

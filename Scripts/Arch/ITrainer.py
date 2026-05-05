@@ -831,12 +831,12 @@ class ITrainer(ICache):
 
         return
 
-    def IDisplayResult(self, bPlotOnly: bool = False) -> None:
+    def IDisplayResult(self, bPlotOnly: bool = False, bY: bool = False) -> None:
         '''
         This is a simple wrapper which loads/generates result and calls the derived class' DisplayResult() impl. 
         '''
         if self.dResult is None or len(list(self.dResult.keys())) == 0:
-            self.LoadResult()
+            self.LoadResult(bY = bY)
             
         return self.DisplayResult(bPlotOnly = bPlotOnly)
     
