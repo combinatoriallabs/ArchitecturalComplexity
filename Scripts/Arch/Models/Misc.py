@@ -1,3 +1,12 @@
+'''
+Code written by Nicholas J. Cooper.
+Released under the MIT license, see the GitHub page for the full legal boilerplate.
+tldr: you freely can do whatever you like with this code so long as this message is retained and you cite the GitHub: https://github.com/combinatoriallabs/ArchitecturalComplexity
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
+'''
+
+
+
 import torch
 
 import functools
