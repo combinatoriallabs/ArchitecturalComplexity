@@ -538,7 +538,7 @@ def ScatterVsX(strDatasetDir: str, vecDS: list[str], vecArch: list[str], dcParam
             #ax.set_title(vecModels[0] + ": " + dCfg["Dataset"], fontsize = 28)
             #fig.canvas.callbacks.connect('pick_event', PickPrinter)
     
-    fig.suptitle(mapXToDisplay[strX] + " vs. Accuracy", fontsize = 24)
+    fig.suptitle("Accuracy vs. " + mapXToDisplay[strX], fontsize = 24)
 
     plt.show()
     plt.close()

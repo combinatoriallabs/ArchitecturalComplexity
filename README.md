@@ -15,7 +15,7 @@ This code was developed for use on linux (specifically, ubuntu 24 and centos 10)
 * If setup was successful, this will cycle through each combination of dataset and baseline architecture and display scatter plots of all samples.
 
 ## Downloading Weights
-This repository contains only the diagnostic data collected from training each sampled architecture. To experiment with the trained weights, download the .zip archive from here. Extract and overwrite (or merge, if you have run experiments since cloning this repo) the directories. This will place various `Model.pth` files into their corresponding hash id folders inside the `Dataset/` directory.
+This repository contains only the diagnostic data collected from training each sampled architecture. To experiment with the trained weights, download the tar archive from here: https://public.combinatoriallabs.com/Dataset.tar.gz. Extract and overwrite (or merge, if you have run experiments since cloning this repo) the directories. This will place various `Model.pth` files into their corresponding hash id folders inside the `Dataset/` directory. You can use `tar -xvf ./Dataset.tar.gz` to untar the archive.
 
 # Usage
 ## Default Mode
@@ -63,17 +63,17 @@ By default, Train.py is setup to retrain the "red star" architecture. Simply run
             * ResNet Bad: 044dc36d105057f7ea5ecd497d8c2efb
             * Swin Good: d5fe2790f8fa23c7a08372289c5466ba
             * Swin Bad: be0fd9efd2bb0bb5da4fc89446de7b49
-* Ensure the `Model` key in the `Train.py` config on line 18 is set to `"ADFNN"`.
-* Enter the dataset on line 28.
-* Enter the ID to the `ADFNNModelID` key in the `Train.py` config on line 20.
-    * Set the `ADFNNCacheDir` key on line 16 appropriately. For example, if you wish to re-train an architecture from the (`CIFAR10`, `ResNet34H`) setting, set the path to `../Dataset/CIFAR10/ResNet34H/ADFNNCache/`.
-* Set the `ADFNNInputModule` according to the baseline architecture. This is accomplished by (un)commenting lines 22/23.
-* Set the `ADFNNOutputModule` according to the baseline architecture. This is accomplished by (un)commenting lines 24/25. Use `"None"` for ResNet samples, and `"AvgDim0"` for SWIN samples.
+* Ensure the `Model` key in the `Train.py` config on line 20 is set to `"ADFNN"`.
+* Enter the dataset on line 30.
+* Enter the ID to the `ADFNNModelID` key in the `Train.py` config on line 22.
+    * Set the `ADFNNCacheDir` key on line 18 appropriately. For example, if you wish to re-train an architecture from the (`CIFAR10`, `ResNet34H`) setting, set the path to `../Dataset/CIFAR10/ResNet34H/ADFNNCache/`.
+* Set the `ADFNNInputModule` according to the baseline architecture. This is accomplished by (un)commenting lines 24/25.
+* Set the `ADFNNOutputModule` according to the baseline architecture. This is accomplished by (un)commenting lines 26/27. Use `"None"` for ResNet samples, and `"AvgDim0"` for SWIN samples.
     * **WARNING:** failure to set the input/output modules correctly for your chosen ADFNN ID *will* result in shape errors!
-* Verify that the optimization parameters are set correctly. The max learning rate can be adjusted on lines 37 and 38. Values of 0.0075/0.001 were used for the ResNet/SWIN samples, respectively.
+* Verify that the optimization parameters are set correctly. The max learning rate can be adjusted on lines 39 and 40. Values of 0.0075/0.001 were used for the ResNet/SWIN samples, respectively.
 
 ### Re-training Baselines
-Re-training baseline models is much easier. Simply change the `Model` key on line 18 to whichever architecture you are interested in. Modify any other values, e.g., `Dataset`, `LearningRate`, then run `python ./Train.py`. Names for all the width-scaled models used to compute the parameter-accuracy curves can be found in the `ADFNNSearchParams.py` file.
+Re-training baseline models is much easier. Simply change the `Model` key on line 20 to whichever architecture you are interested in. Modify any other values, e.g., `Dataset`, `LearningRate`, then run `python ./Train.py`. Names for all the width-scaled models used to compute the parameter-accuracy curves can be found in the `ADFNNSearchParams.py` file.
 
 ### Running New Experiments
 The experiment-to-disk hashmap was designed to encourage experimentation by eliminating any need to worry about storing/organizing the results. It is encouraged to modify configs, train models, and extend this codebase. If you make any interesting observations, do let us know!
